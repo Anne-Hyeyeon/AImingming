@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        header {
+            font-weight: bold;
+        }
+        #chat {
+            width: 400px;
+        } 
+        #main {
+            border: 1px solid black;
+            width: 400px;
+            height: 200px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.7.js"></script>
+    <script>
+      $(function(){
+         $('form').submit(function(event) {
+         const flutting = [' 참, 그리고 한 마디만 더 할게요. 공주님 너무 아름다우세요.',' 아 그리고 갑자기 생각난 건데, 아무리 생각해도 공주님같은 여자는 세상에 없어요.',' 아 그런데 갑자기 너무 보고싶어요ㅠㅠ',' 아 그런데 공주님이 오늘따라 더욱 보고싶네요.', ' 근데 한 마디만 더 할게요. 공주님같은 여자는 세상에 없는 것 같아요.',' 참, 그리고 한 마디만 더 말할게요. 공주님 오늘따라 너무 보고싶어요.', ' 뜬금없지만 한 마디만 더 할게요. 내사랑 공주님, 오늘도 미모가 빛나겠군요. 너무 보고싶습니다.',' 아 그리고 공주가 진짜 보고싶네요 ㅠㅠㅇㅅㅇ',' 에휴. 근데 오늘따라 왜 더 보고싶죠? 얼른 공주한테 디올백을 안겨 주고 싶어요.'];
+         const makingNumb = Math.floor(Math.random()*flutting.length);
+         const randomFlutting = flutting[makingNumb];
+         const content = $('#chat').val();
+         event.preventDefault();
+         $('#main').html(content+randomFlutting);
+         $('#chat').val('');
+         });
+        }); 
+    </script>       
+    <title>Document</title>
+</head>
+<body>
+    <header>★AI민재 (완성 전)★</header>
+    <div id="main"></div>
+    <form>
+        <input type="text" id="chat" name="chat" placeholder="공주님한테 전할 말을 입력하세요. (ex)아 점심 뭐 먹지?" />
+        <input type="submit" value="입력" />
+    </form>
+</body>
+</html>
